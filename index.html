@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hey</title>
+    <style>
+        .readonly {
+            pointer-events: none;
+            cursor: not-allowed;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <form action="#">
+        <input type="text" name="" id="" required class="text-input readonly">
+        <input type="submit" class="submit-btn" />
+    </form>
+
+    <script>
+        document.querySelector('form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            console.log("hey");
+        });
+
+        document.querySelector('.text-input').addEventListener('keydown', (e) => {
+            e.preventDefault();
+        });
+
+        $('.text-input').focus(function () {
+            this.blur();
+        });
+    </script>
+</body>
+
+</html>
